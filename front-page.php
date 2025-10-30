@@ -1,11 +1,4 @@
 <?php
-/**
- * Front page template for the Natale Builders theme.
- *
- * This provides a clean scaffold of the sections visible on the provided
- * design: hero, featured homes/cards, explore section, map, blog, testimonial,
- * contact form, partners.
- */
 
 if (!defined('ABSPATH')) {
     exit;

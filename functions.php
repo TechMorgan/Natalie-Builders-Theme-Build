@@ -36,6 +36,9 @@ function natale_setup_theme() {
         array(
             'primary' => __('Primary Menu', 'natale'),
             'footer'  => __('Footer Menu', 'natale'),
+            'footer_explore' => __('Footer Explore', 'natale'),
+            'footer_more'    => __('Footer Find Out More', 'natale'),
+            'footer_bottom'  => __('Footer Bottom', 'natale'),
         )
     );
 }
@@ -79,6 +82,47 @@ function natale_customize_register($wp_customize) {
         array(
             'label'   => __('Header phone number', 'natale'),
             'section' => 'natale_header',
+            'type'    => 'text',
+        )
+    );
+
+    // Footer contact info.
+    $wp_customize->add_section(
+        'natale_footer',
+        array(
+            'title'    => __('Footer', 'natale'),
+            'priority' => 31,
+        )
+    );
+
+    $wp_customize->add_setting(
+        'natale_address',
+        array(
+            'default'           => '9159 Main St, Clarence, NY 14031',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+    $wp_customize->add_control(
+        'natale_address',
+        array(
+            'label'   => __('Address', 'natale'),
+            'section' => 'natale_footer',
+            'type'    => 'text',
+        )
+    );
+
+    $wp_customize->add_setting(
+        'natale_email',
+        array(
+            'default'           => 'info@natalebuilders.com',
+            'sanitize_callback' => 'sanitize_email',
+        )
+    );
+    $wp_customize->add_control(
+        'natale_email',
+        array(
+            'label'   => __('Email', 'natale'),
+            'section' => 'natale_footer',
             'type'    => 'text',
         )
     );

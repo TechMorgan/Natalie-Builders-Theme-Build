@@ -14,7 +14,6 @@ if (have_posts()) :
         $is_elementor = class_exists('\\Elementor\\Plugin') && \Elementor\Plugin::$instance->db->is_built_with_elementor(get_the_ID());
 
         if ($is_elementor) {
-            // Let Elementor control the layout (no theme container wrap).
             the_content();
         } else {
             echo '<div class="container section">';
